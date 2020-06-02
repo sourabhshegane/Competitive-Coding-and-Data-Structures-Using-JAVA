@@ -1,3 +1,4 @@
+import java.util.Stack;
 
 public class LinkedList {
 	class Node{
@@ -94,6 +95,26 @@ public class LinkedList {
 		}
 	}
 	
+	public void reverseLinkedList() {	//Using Stack
+		Stack<Node> mStack = new Stack();
+		Node tempNode = headNode;
+		
+		while(tempNode != null) {
+			mStack.push(tempNode);
+			tempNode = tempNode.nextNode;
+		}
+		
+		headNode = mStack.pop();
+		tempNode = headNode;
+		
+		while(!mStack.isEmpty()) {
+			tempNode.nextNode = mStack.pop();
+			tempNode = tempNode.nextNode;
+		}
+		
+		tempNode.nextNode = null;
+	}
+	
 	public static void main(String args[]) {
 		System.out.println("Linked List Implemenetation");
 		LinkedList mLinkedList = new LinkedList();
@@ -120,7 +141,17 @@ public class LinkedList {
 		mLinkedList.deleteNode(4);
 		mLinkedList.printLinkedList();
 	
-		System.out.println("\nReverse Diplay the List using Recursion");
-		mLinkedList.reverseDisplayList(mLinkedList.headNode);
+		/*
+		 * System.out.println("\nReverse Diplay the List using Recursion");
+		 * mLinkedList.reverseDisplayList(mLinkedList.headNode);
+		 */
+		System.out.println("\nReverse the List using Recursion");
+		mLinkedList.reverseLinkedList();
+		mLinkedList.printLinkedList();
+		
+		System.out.println("\nList after inserting an element");
+		mLinkedList.insertNode(20);
+		mLinkedList.printLinkedList();
+
 	}
 }
