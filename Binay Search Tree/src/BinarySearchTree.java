@@ -21,7 +21,7 @@ public class BinarySearchTree {
 			tempNode = new Node(data);
 			return tempNode;
 		}else {
-			if(data < rootNode.data) {
+			if(data <= tempNode.data) {
 				tempNode.leftChild = insert(tempNode.leftChild, data);
 			}else {
 				tempNode.rightChild = insert(tempNode.rightChild, data);
@@ -54,14 +54,49 @@ public class BinarySearchTree {
 		}
 	}
 	
+	public void returnMinimum(Node tempNode) {		//Returns the minimum value from BST i.e. LeftMost Child
+		if(tempNode.leftChild == null) {
+			System.out.println("The Minimum Value in BST is : " + tempNode.data);
+			return;
+		}else {
+			returnMinimum(tempNode.leftChild);
+		}
+	}
+	
+	public void returnMaximum(Node tempNode) {		//Returns the maximum value from BST i.e. Rightmost Child
+		if(tempNode.rightChild == null) {
+			System.out.println("The Maximum Value in BST is : " + tempNode.data);
+			return;
+		}else {
+			returnMinimum(tempNode.rightChild);
+		}
+	}
+	
 	public static void main(String args[]) {
 		BinarySearchTree mBinarySearchTree = new BinarySearchTree();
-		rootNode = mBinarySearchTree.insert(rootNode, 100);
-		mBinarySearchTree.insert(rootNode, 10);
-		mBinarySearchTree.insert(rootNode, 400);
-		mBinarySearchTree.insert(rootNode, 0);
+		
+		//First Insertion
+		rootNode = mBinarySearchTree.insert(rootNode, 10);
+		
+		//Insertions
+		mBinarySearchTree.insert(rootNode, 8);
+		mBinarySearchTree.insert(rootNode, 16);
+		mBinarySearchTree.insert(rootNode, 5);
+		mBinarySearchTree.insert(rootNode, 9);
+		mBinarySearchTree.insert(rootNode, 17);
+		mBinarySearchTree.insert(rootNode, 15);
+		
+		//Inorder Traversal
 		mBinarySearchTree.inorderTraversal(rootNode);
+		
+		//Searching for an element
 		mBinarySearchTree.search(rootNode, 10);
+		
+		//Find Smallest
+		mBinarySearchTree.returnMinimum(rootNode.leftChild);
+		
+		//Find Smallest
+		mBinarySearchTree.returnMaximum(rootNode.rightChild);
 	}
 }
 
