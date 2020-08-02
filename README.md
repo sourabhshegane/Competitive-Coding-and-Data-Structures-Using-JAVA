@@ -1,5 +1,6 @@
 # Data Structures Using JAVA
-Implementation of different data structures using JAVA.
+Implementation of different data structures, sorting and searching algorithms using JAVA. 
+Tutorials Followed : https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
 # Index:
 1. Singly Linked List :  (https://github.com/sourabhshegane/Data-Structures-Using-JAVA/tree/master/LinkedList)
