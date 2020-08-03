@@ -1,6 +1,7 @@
 # Data Structures Using JAVA
 Implementation of different data structures, sorting and searching algorithms using JAVA. 
-Tutorials Followed : https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
+
+# Tutorials Followed : https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
 # Index:
 1. Singly Linked List :  (https://github.com/sourabhshegane/Data-Structures-Using-JAVA/tree/master/LinkedList)
@@ -9,3 +10,5 @@ Tutorials Followed : https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGM
 4. Check for Balanced Parentheses using Stack (https://github.com/sourabhshegane/Data-Structures-Using-JAVA/tree/master/Balanced%20Parentheses%20Check%20using%20Stack)
 5. Queue Implementation using LinkedList (https://github.com/sourabhshegane/Data-Structures-Using-JAVA/tree/master/Queue%20using%20Linked%20List)
 6. Binary Search Tree (https://github.com/sourabhshegane/Data-Structures-Using-JAVA/tree/master/Binary%20Search%20Tree/src)
+7. Selection Sort : https://github.com/sourabhshegane/Data-Structures-Using-JAVA/blob/master/SelectionSort.java
+8. Bubble Sort : https://github.com/sourabhshegane/Data-Structures-Using-JAVA/blob/master/BubbleSort.java
