@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+        String myAnagrams[] = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        HashMap<String, ArrayList<String>> myHashMap = new HashMap<String, ArrayList<String>>();
+        
+        for(String anagram : myAnagrams){
+        //Below line is used to sort a String in alphabetical order. Available since Java 8
+          String sortedWord = anagram.chars().sorted().collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append).toString();
+          
+            System.out.println(sortedWord);
+            
+            if(myHashMap.containsKey(sortedWord)){
+                ArrayList c = myHashMap.get(sortedWord);
+                c.add(anagram);
+            }else{
+                myHashMap.put(sortedWord, new ArrayList<String>());
+            }
+        }
+            System.out.println(myHashMap);
+    }
+}
