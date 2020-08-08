@@ -21,3 +21,4 @@ public class MyClass {
             System.out.println(myHashMap);
     }
 }
+ Time Complexity : O(n)
