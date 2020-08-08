@@ -1,0 +1,64 @@
+public class MyClass {
+    public static void main(String args[]) {
+        String myString = "axabbayz";
+        int myStringLength = myString.length();
+        int count = 0;
+
+        for (int i = 0; i < myStringLength; i++) {
+            for (int j = 0; j < myStringLength; j++) {
+                //System.out.println("Iterarion : " + i + ", " + j);
+                int result = getPalindrome(myString, i, j);
+                if (result > count)
+                    count = result;
+            }
+        }
+
+        System.out.println(count);
+    }
+
+    public static int myMatrix[][] = new int[10][10];
+
+    public static int getPalindrome(String string, int i, int j) {
+
+        int actualI = i, actualJ = j;
+        boolean isValid = false;
+        int c = 0;
+        /*if (i <= j) {
+            System.out.println("Ith" + i + "Jth" + j);
+            System.out.println("String : " + string.substring(i, j));
+        }*/
+        while (i < j) {
+            isValid = true;
+            Character characterOnLeft = string.charAt(i);
+            Character characterOnRight = string.charAt(j - 1);
+
+            if (myMatrix[i][j] == 1) {
+                c++;
+                i++;
+                j--;
+                continue;
+            } else if (characterOnLeft != characterOnRight) {
+                //System.out.println("" + characterOnLeft + "!=" + "" + characterOnRight);
+                myMatrix[i][j] = 0;
+                return 0;
+
+            } else if (characterOnLeft == characterOnRight) {
+                myMatrix[i][j] = 1;
+                i++;
+                j--;
+                c++;
+            }
+
+        }
+
+        if (isValid) {
+            myMatrix[actualI][actualJ] = 1;
+        }
+
+        if (i <= j)
+            return Math.abs(actualI - actualJ);
+        else
+            return 0;
+
+    }
+}
