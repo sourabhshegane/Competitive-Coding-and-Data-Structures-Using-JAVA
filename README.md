@@ -1,5 +1,5 @@
 # Competitive Coding Problems and Data Structures using JAVA
-Implementation of different data structures, sorting and searching algorithms using JAVA. 
+Implementation of different data structures, sorting and searching algorithms, competitive coding problems, technical interview questions using JAVA. 
 
 # Tutorials Followed to learn Data Structures: (MyCodeSchool) https://www.youtube.com/watch?v=92S4zgXN17o&list=PL2_aWCzGMAwI3W_JlcBbtYTwiQSsOTa6P
 
