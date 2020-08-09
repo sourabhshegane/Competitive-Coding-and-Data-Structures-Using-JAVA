@@ -15,4 +15,4 @@ Implementation of different data structures, sorting and searching algorithms us
 9. Largest Palindrome SubString (Using Dynamic Programming) : https://github.com/sourabhshegane/Data-Structures-Using-JAVA/blob/master/LargestPalindromeSubString
 10. Group Anagrams: https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/GroupAnagrams
 11. Move Element to End of the array (Order not maintained): https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MoveElementToEndOfArray
-12. Move Element to End of the array (Order not maintained):https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MoveElementToEndOfArrayMaintainOrder
+12. Move Element to End of the array (Order maintained):https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MoveElementToEndOfArrayMaintainOrder
