@@ -17,3 +17,4 @@ Implementation of different data structures, sorting and searching algorithms, c
 11. Move Element to End of the array (Order not maintained): https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MoveElementToEndOfArray
 12. Move Element to End of the array (Order maintained):https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MoveElementToEndOfArrayMaintainOrder
 13. Search in a sorted matrix : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/SearchInSortedMatrix
+14. Find Maximum Difference between elements of two arrays : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MaximumDifferenceInTwoArrays
