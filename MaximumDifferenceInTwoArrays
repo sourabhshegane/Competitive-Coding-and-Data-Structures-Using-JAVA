@@ -1,0 +1,52 @@
+import java.util.*;
+
+public class MyClass {
+    public static void main(String args[]) {
+        int x[] = {-1,
+            5,
+            10,
+            20,
+            28,
+            3
+        };
+        int y[] = {
+            26,
+            134,
+            135,
+            15,
+            -2
+        };
+        int minimum = Integer.MAX_VALUE;
+
+        Arrays.sort(x);
+        Arrays.sort(y);
+
+        int leftPointer = 0;
+        int rightPointer = 0;
+
+        while (leftPointer < x.length && rightPointer < y.length) {
+
+            int leftValue = x[leftPointer];
+            int rightValue = y[rightPointer];
+            int current = 0;
+
+            if (rightValue > leftValue) {
+                current = (rightValue - leftValue);
+                leftPointer++;
+            } else if (leftValue > rightValue) {
+                current = (leftValue - rightValue);
+                rightPointer++;
+            } else {
+                minimum = 0;
+            }
+
+            if (current < minimum)
+                minimum = current;
+        }
+
+        System.out.println(minimum);
+    }
+}
+
+//TC : O(n log (n)) + O(m log (m)) 
+//SC : O(1)
