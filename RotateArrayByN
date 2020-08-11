@@ -1,0 +1,36 @@
+/*
+Tutorial Followed: https://www.youtube.com/watch?v=gmu0RA5_zxs
+Logic : 
+1. Reverse entire array
+2. Reverse the array from 0 to n, where n is the number of times the array is to be rotated by.
+3. Reverse the array from n to end of array  
+*/
+
+class Solution {
+    public void rotate(int[] nums, int k) {
+        k = (k % nums.length);
+        reverse(0, (nums.length - 1), nums);
+        reverse(0, (k - 1), nums);
+        reverse(k, (nums.length - 1), nums);
+    }
+    
+    private void reverse(int start, int end, int arrayToRotate[]){
+        while(start < end){
+            int temp = arrayToRotate[start];
+            arrayToRotate[start] = arrayToRotate[end];
+            arrayToRotate[end] = temp;
+            start++;
+            end--;
+        }
+    }
+    
+    public static void main(String args[]){
+      int array[] = {1, 2, 3, 4, 5, 6}
+      int n = 3;
+      
+      rotate(array, n);
+    }
+}
+
+//TC : O(n)
+//SC : O(1)
