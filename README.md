@@ -19,3 +19,4 @@ Implementation of different data structures, sorting and searching algorithms, c
 13. Search in a sorted matrix : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/SearchInSortedMatrix
 14. Find Maximum Difference between elements of two arrays : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MaximumDifferenceInTwoArrays
 15. Rotate array by N : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/RotateArrayByN
+16. Search in sorted rotated array in O(log n) : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/SearchInRotatedSortedArray
