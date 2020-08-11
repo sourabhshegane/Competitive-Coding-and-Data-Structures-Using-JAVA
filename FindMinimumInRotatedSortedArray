@@ -1,0 +1,27 @@
+//Tutorial : https://www.youtube.com/watch?v=oC-GvyFJSQs
+
+class Solution {
+    public int findMin(int[] nums) {
+        if(nums == null || nums.length < 1)
+            return 0;
+        
+        int leftPointer = 0;
+        int rightPointer = (nums.length - 1);
+        int middlePointer;
+    
+        while(leftPointer < rightPointer){
+            middlePointer = ((leftPointer + rightPointer) / 2);
+            
+            if(nums[middlePointer] > nums[rightPointer]){
+                leftPointer = (middlePointer + 1);
+            }else{
+                rightPointer = middlePointer ;
+            }
+        }
+        
+        return nums[leftPointer];
+    }
+}
+
+//TC : O(log n) as we are using Binary Search approach and dividing problem into half everytime.
+//SC : O(1) as we are not using any additional data structure/
