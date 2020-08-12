@@ -1,0 +1,37 @@
+//Tutorial : https://www.youtube.com/watch?v=I7fFgU6n4x8
+
+class Solution {
+    public int maxArea(int[] height) {
+        if(height == null || height.length < 1){
+            return 0;
+        }
+        
+        int leftPointer = 0;
+        int rightPointer = (height.length - 1);
+        int maximum = Integer.MIN_VALUE;
+        int distance;
+        
+        while(leftPointer < rightPointer){
+            int leftHeigth = height[leftPointer];
+            int rightHeigth = height[rightPointer];
+            
+            distance = (Math.min(leftHeigth, rightHeigth) * (rightPointer - leftPointer));
+            
+            if(leftHeigth < rightHeigth){
+                leftPointer++;
+            }else if(rightHeigth < leftHeigth){
+                rightPointer--;
+            }else{
+                leftPointer++;
+            }
+            
+            if(distance > maximum){
+                maximum = distance;
+            }
+        }
+        return maximum;
+    }
+}
+
+//TC : O(n)
+//SC : O(1)
