@@ -18,7 +18,7 @@ Implementation of different data structures, sorting and searching algorithms, c
 12. Move Element to End of the array (Order maintained):https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MoveElementToEndOfArrayMaintainOrder
 13. Search in a sorted matrix : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/SearchInSortedMatrix
 14. Find Maximum Difference between elements of two arrays : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MaximumDifferenceInTwoArrays
-15. Rotate array by N : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/RotateArrayByN
+15. Rotate array by N to right: https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/RotateArrayByN
 16. Search in sorted rotated array in O(log n) : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/SearchInRotatedSortedArray
 17. Find Minimum in sorted rotated array in O(log n) : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/FindMinimumInRotatedSortedArray
 18. Container with most water : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/ContainerWithMostWater
