@@ -23,3 +23,4 @@ Implementation of different data structures, sorting and searching algorithms, c
 17. Find Minimum in sorted rotated array in O(log n) : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/FindMinimumInRotatedSortedArray
 18. Container with most water : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/ContainerWithMostWater
 19. Rotate a matrix by 90 degree : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/RotateArrayBy90
+20. Check weather the last index can be reached or not : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/CanReachLastIndex
