@@ -1,0 +1,33 @@
+//Tutorial : https://www.youtube.com/watch?v=SA867FvqHrM
+/*
+Logic : 
+1. Find the transpose of the matrix
+2. Swap the row values using 2 pointer approach
+*/
+
+class Solution {
+    public void rotate(int[][] matrix) {
+        int lengthOfArray = matrix.length;
+        
+        //Find the transpose of the matrix
+        for(int row = 0 ; row < lengthOfArray ; row ++){
+            for(int column = row ; column < lengthOfArray ; column ++ ){
+                int temp = matrix[row][column];
+                matrix[row][column] = matrix[column][row];
+                matrix[column][row] = temp;
+            }
+        }
+        
+        //Swap the values
+        for(int row = 0 ; row < lengthOfArray ; row ++){
+            for(int column = 0 ; column < (lengthOfArray / 2) ; column ++ ){
+                int temp = matrix[row][column];
+                matrix[row][column] = matrix[row][(lengthOfArray - 1) - column];
+                matrix[row][(lengthOfArray - 1) - column] = temp;
+            }
+        }
+    }
+}
+
+//TC : O(n)
+//SC : O(1)
