@@ -1,0 +1,42 @@
+//Tutorial : https://www.youtube.com/watch?v=K8iHi8AW1ls
+/*
+Logic : Draw a spider chart
+arr[] = {7, 5, 9, 5, 0, 3}
+              9
+            / \
+          /    \ 
+7       /       \
+\      5         5
+  \   /           \      3
+    \/              \   /
+                     \ /
+                      0
+
+*/
+
+class Solution {
+    public int maxProfit(int[] prices) {
+        if(prices == null || prices.length < 1){
+            return 0;
+        }
+        
+        int totalShares = prices.length;
+        int i = 1;
+        int currentProfit = 0;
+        
+        while(i < totalShares){
+            int currentDayPrice = prices[i];
+            int previousDayPrice = prices[i - 1];
+            
+            if(currentDayPrice > previousDayPrice){
+                currentProfit += (currentDayPrice - previousDayPrice);
+            }    
+            
+            i++;
+        }
+        
+        return currentProfit;
+    }
+}
+//TC: O(n)
+//SC: O(1)  
