@@ -1,0 +1,53 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+		int numberOfTestCases = scanner.nextInt();
+		
+		for(int i = 0 ; i < numberOfTestCases ; i ++){
+		    
+		    int count = scanner.nextInt();
+		    int myArray[] = new int[count];
+		    
+		    for(int k = 0 ; k < count ; k ++){
+		        myArray[k] = scanner.nextInt();
+		    }
+		    
+		    int dropPoint = 0;
+		    int totalPrices = (myArray.length);
+		    boolean hasMadeProfit = false;
+
+		    for(int t = 1 ; t < totalPrices ; t ++){
+		        
+		        int currentDayPrice = myArray[t];
+		        int previousDayPrice = myArray[t - 1];
+		        
+		        if((currentDayPrice < previousDayPrice) && (t < totalPrices)){
+		            
+		            if((dropPoint + 1) != t)
+		                System.out.print("(" + dropPoint + " " + (t - 1) + ")" + " ");
+		            
+		            dropPoint = t;
+		        }else{
+		            hasMadeProfit = true;
+		        }
+		    }
+		    
+		    if(!hasMadeProfit){
+		        System.out.print("No Profit" + "\n");
+		        myArray = null;
+		        continue;
+		    }
+		        
+		    if(dropPoint != (totalPrices - 1))
+		        System.out.print("(" + dropPoint + " " + (totalPrices - 1) + ")" + "\n");
+		    
+		    myArray = null;
+		}
+	}
+}
