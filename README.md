@@ -26,3 +26,4 @@ Implementation of different data structures, sorting and searching algorithms, c
 20. Check weather the last index can be reached or not : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/CanReachLastIndex
 21. Maximize profits in shares: https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MaximumProfitShares
 22. Maximize profits in shares Range: https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/FindMaximumProfitRange
+23. Good or Bad String (GeeksForGeeks) : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/GoodOrBadString
