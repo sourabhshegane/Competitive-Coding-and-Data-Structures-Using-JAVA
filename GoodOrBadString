@@ -1,0 +1,114 @@
+/*
+
+Problem Statement : https://practice.geeksforgeeks.org/problems/good-or-bad-string/0
+
+*/
+
+//Code :
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+
+    public static boolean isVowel(Character c) {
+        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u';
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        for (int i = 0; i < n; i++) {
+
+            String myString = scanner.next();
+
+            if (myString == null || myString.length() < 1) {
+                System.out.println("0");
+                continue;
+            }
+
+            boolean isVowel = false, isBadString = false;
+            int vowelCounter = 0, consonantCounter = 0;
+
+            for (int j = 0; j < myString.length(); j++) {
+
+                Character currentCharacter = myString.charAt(j);
+
+                if (currentCharacter == '?') {
+                    int nextIndex = (j + 1);
+                    Character wildCard = 'a', nextCharacter = 'x';
+
+                    if (nextIndex > (myString.length() - 1)) {
+
+                        if (isVowel) {
+                            wildCard = 'a';
+                        } else {
+                            wildCard = 'd';
+                        }
+
+                    } else {
+                        nextCharacter = myString.charAt(nextIndex);
+                        boolean nextCharacterIsVowel = isVowel(nextCharacter);
+
+                        if (!isVowel) {
+                            if (nextCharacter == '?' || !nextCharacterIsVowel) {
+                                wildCard = 'd';
+                            } else if (nextCharacterIsVowel) {
+
+                                if ((consonantCounter + 1) >= 3) {
+                                    wildCard = 'd';
+                                } else {
+                                    wildCard = 'a';
+                                }
+                            }
+                        } else {
+                            if (nextCharacter == '?' || nextCharacterIsVowel) {
+                                wildCard = 'a';
+                            } else if (!nextCharacterIsVowel) {
+
+                                if ((vowelCounter + 1) >= 5) {
+                                    wildCard = 'a';
+                                } else {
+                                    wildCard = 'd';
+                                }
+                            }
+                        }
+                    }
+
+                    currentCharacter = wildCard;
+                }
+
+                if (isVowel(currentCharacter)) {
+
+                    isVowel = true;
+                    consonantCounter = 0;
+                    vowelCounter++;
+
+                    if (vowelCounter > 5) {
+                        isBadString = true;
+                        break;
+                    }
+
+                } else {
+
+                    isVowel = false;
+                    consonantCounter++;
+                    vowelCounter = 0;
+
+                    if (consonantCounter > 3) {
+                        isBadString = true;
+                        break;
+                    }
+                }
+            }
+
+            if (!isBadString) {
+                System.out.println("1");
+            } else {
+                System.out.println("0");
+            }
+        }
+    }
+}
