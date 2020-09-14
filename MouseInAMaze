@@ -1,0 +1,79 @@
+public class MyClass {
+    
+    static boolean visited[][] = {
+        {false, false, false, false},
+        {false, false, false, false},
+        {false, false, false, false},
+        {false, false, false, false}
+    };
+    
+    static int maze[][] = {
+      {1, 0, 0, 0},
+      {1, 1, 1, 1},
+      {1, 0, 0, 1},
+      {1, 1, 1, 1},
+   };
+   
+   static int[] rowMoves = {-1, 1, 0, 0};
+   static int[] columnMoves = {0, 0, 1, -1};
+    
+    public static void main(String args[]) {
+        visited[0][0] = true; 
+        printPath(0, 0, 1, 3, 0, 0);
+        visited[0][0] = false; 
+    }
+    
+    public static void printPath(int currentRow, int currentColumn, int destinationRow, int destinationColumn, int previousRow, int previousColumn){
+        boolean foundAPath = false;
+        
+        if((currentRow == destinationRow) && (currentColumn == destinationColumn)){
+            
+            System.out.println("***************************************************");
+            
+            for(int i = 0 ; i < visited.length ; i ++){
+                if(visited[i][0]){
+                    System.out.println("[ " + i + ", 0]");
+                }
+                if(visited[i][1]){
+                    System.out.println("[ " + i + ", 1]");
+                }
+                if(visited[i][2]){
+                    System.out.println("[ " + i + ", 2]");
+                }
+                if(visited[i][3]){
+                    System.out.println("[ " + i + ", 3]");
+                }
+            }
+        }
+        
+        for(int i = 0 ; i < (rowMoves.length - 1) ; i ++){
+            
+            int nextRowMove = currentRow + rowMoves[i];
+            int nextColumnMove = currentColumn + columnMoves[i];
+            
+            if(isValidNextMove(nextRowMove, nextColumnMove)){
+                visited[nextRowMove][nextColumnMove] = true;
+                foundAPath = true;
+                printPath(nextRowMove, nextColumnMove, destinationRow, destinationColumn, currentRow, currentColumn);
+                visited[nextRowMove][nextColumnMove] = false;
+            }
+        }
+        /*
+        if(!foundAPath){
+            System.out.println("Not Possible to reach to the destination through [" + currentRow + ", " + currentColumn +"]");
+            return;
+        }*/
+    }
+    
+    public static boolean isValidNextMove(int rowMove, int columnMove){
+        if((rowMove >= 0 && rowMove <= 3) && (columnMove >= 0 && columnMove <= 3)){
+            if(!visited[rowMove][columnMove]){
+                if(maze[rowMove][columnMove] != 0){
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+}
