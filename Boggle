@@ -1,0 +1,74 @@
+import java.util.ArrayList;
+
+public class MyClass {
+
+    static String[][] boggle = {
+        {"F", "O", "B"},
+        {"O", "A", "E"},
+        {"K", "S", "C"}
+      };
+      
+    static ArrayList<String> dictionary = new ArrayList<String>();
+     
+    static int rowMoves[] =  { 0, 0, 1, 1, -1, 1, -1, -1 };
+    static int columnMoves[] = { 1, -1, -1, 1, 1, 0, 0, -1 };
+    
+    public static void main(String args[]) {
+        
+        dictionary.add("FACE");
+        dictionary.add("BOOK");
+        dictionary.add("FACEBOOK");
+        dictionary.add("CEO");
+          
+        boolean status[][] = {
+              {false, false, false},
+              {false, false, false},
+              {false, false, false}
+        };
+        
+        for(int i = 0; i < 3 ; i ++){
+            for(int j = 0; j < 3 ; j ++){
+                status[i][j] = true;
+                findWordsInDictionary("" + boggle[i][j], 0, 0, status);
+                status[i][j] = false;
+            }
+        }
+    }
+    
+    public static void findWordsInDictionary(String currentString, int row, int column, boolean status[][]){
+        
+        if(currentString.length() > 9){
+            return;
+        }
+        
+        if(dictionary.contains(currentString.trim())){
+            System.out.println("Matched: " + currentString.toString().trim());
+        }
+        
+        for(int i = 0 ; i < 8 ; i ++){
+            
+            int nextRowMove = row + rowMoves[i];
+            int nextColumnMove = column + columnMoves[i];
+            
+            if(currentString.length() >= 2 && currentString.charAt(0) == 'C' && currentString.charAt(0) == 'E'){
+                System.out.println(currentString);
+            }
+            
+            if(isValidNextMove(nextRowMove, nextColumnMove, status)){
+                status[nextRowMove][nextColumnMove] = true;
+                findWordsInDictionary(currentString + boggle[nextRowMove][nextColumnMove], nextRowMove, nextColumnMove, status);
+                status[nextRowMove][nextColumnMove] = false;
+            }
+        }
+    }
+    
+    public static boolean isValidNextMove(int rowToCheck, int columnToCheck, boolean status[][]){
+        if((rowToCheck >= 0 && rowToCheck <= 2) && (columnToCheck >= 0 && columnToCheck <= 2)){
+            if(status[rowToCheck][columnToCheck] == false){
+                return true;
+            }
+        }
+        
+        return false;
+    }
+}
