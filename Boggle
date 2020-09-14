@@ -49,11 +49,7 @@ public class MyClass {
             
             int nextRowMove = row + rowMoves[i];
             int nextColumnMove = column + columnMoves[i];
-            
-            if(currentString.length() >= 2 && currentString.charAt(0) == 'C' && currentString.charAt(0) == 'E'){
-                System.out.println(currentString);
-            }
-            
+             
             if(isValidNextMove(nextRowMove, nextColumnMove, status)){
                 status[nextRowMove][nextColumnMove] = true;
                 findWordsInDictionary(currentString + boggle[nextRowMove][nextColumnMove], nextRowMove, nextColumnMove, status);
