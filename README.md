@@ -29,3 +29,4 @@ Implementation of different data structures, sorting and searching algorithms, c
 23. Good or Bad String (GeeksForGeeks) : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/GoodOrBadString
 24. Find first repeated character : https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/FindFirstRepeatedCharacter
 25. Mouse in a maze (Backtracking): https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/MouseInAMaze
+26. Path with Maximum Gold (Backtracking): https://github.com/sourabhshegane/Competitive-Coding-and-Data-Structures-Using-JAVA/blob/master/LeetCodePathWithMaximumGold
