@@ -26,6 +26,7 @@ class Solution {
             }
         }
         
+        /*  Static variable gives wrong output during final submission, hence it is required to reset to zero everytime   */
         int s = MAX_PROFIT;
         MAX_PROFIT = 0;
         return s;
