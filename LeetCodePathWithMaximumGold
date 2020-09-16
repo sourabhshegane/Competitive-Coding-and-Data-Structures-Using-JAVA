@@ -1,0 +1,82 @@
+//Problem : https://leetcode.com/problems/path-with-maximum-gold/
+
+class Solution {
+    
+    static int[] rowMoves = {-1, 1, 0, 0};
+    static int[] columnMoves = {0, 0, 1, -1};
+    static boolean[][] visitedNodes = new boolean[30][30]; 
+    static int MAX_PROFIT = 0;
+    
+    public int getMaximumGold(int[][] grid) {
+        int m = (grid.length);
+        int n = (grid[0].length);
+        
+        //System.out.println("Rows: " + m + "Cols: " + n);
+        
+        for(int i = 0 ; i < m ; i++){
+            for(int j = 0 ; j < n ; j++){
+                int currentGoldValue = grid[i][j];
+                if(currentGoldValue > 0){
+                    //System.out.println("NEW");
+                    visitedNodes[i][j] = true;
+                    findMostValuablePath(i, j, currentGoldValue, m, n, grid);
+                    visitedNodes[i][j] = false;
+                    //System.out.println("FINISHED");
+                }
+            }
+        }
+        
+        int s = MAX_PROFIT;
+        MAX_PROFIT = 0;
+        return s;
+    }
+    
+    public void findMostValuablePath(int currentRow, int currentColumn, int currentValue, int rowLength, int columnLength, int grid[][]){
+        if(currentValue >= MAX_PROFIT){
+            MAX_PROFIT = currentValue;
+        }
+        
+        //System.out.print(grid[currentRow][currentColumn] + "-->");
+        
+        for(int i = 0; i <= (rowMoves.length - 1) ; i ++){
+            
+            int nextRowMove = currentRow + rowMoves[i];
+            int nextColumnMove = currentColumn + columnMoves[i];
+            
+            if(isValidNextMove(nextRowMove, nextColumnMove, rowLength, columnLength, grid)){
+                
+                /*switch(i){
+                case 0:
+                    System.out.println("Going Top");
+                    break;
+                case 1:
+                    System.out.println("Going Down");
+                    break;
+                case 2:
+                    System.out.println("Going Right");
+                    break;
+                default:
+                    System.out.println("Going Left");
+            }*/
+                
+                currentValue+= grid[nextRowMove][nextColumnMove];
+                visitedNodes[nextRowMove][nextColumnMove] = true;
+                findMostValuablePath(nextRowMove, nextColumnMove, currentValue, rowLength, columnLength, grid);
+                visitedNodes[nextRowMove][nextColumnMove] = false;
+                currentValue-= grid[nextRowMove][nextColumnMove];
+            }
+        }
+    }
+    
+    public boolean isValidNextMove(int row, int column, int rowLength, int columnLength, int grid[][]){
+        if((row >= 0 && row < rowLength) && (column >= 0 && column < columnLength)){
+            if(!visitedNodes[row][column]){
+                if(grid[row][column] > 0) {
+                    return true;
+                }
+            }
+        }
+        
+        return false;
+    }
+}
